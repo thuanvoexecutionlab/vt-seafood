@@ -1,0 +1,54 @@
+.custom-scroll-bar,
+.vertical-scroll {
+  scrollbar-width: 4px;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 2px;
+  }
+}
+
+.vertical-scroll {
+  overflow-y: auto;
+}
+
+.hide-scroll-bar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &-multiline {
+    @extend .ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    &-1 {
+      @extend .ellipsis-multiline;
+      -webkit-line-clamp: 1;
+    }
+    &-2 {
+      @extend .ellipsis-multiline;
+      -webkit-line-clamp: 2;
+    }
+    &-3 {
+      @extend .ellipsis-multiline;
+      -webkit-line-clamp: 3;
+    }
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
